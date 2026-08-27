@@ -12,7 +12,7 @@ keiyoushi {
 
     source {
         lang = "ko"
-        baseUrl = "https://manatoki552.net"
+        baseUrl = "https://mato30.com/"
         versionId = 2
     }
 }
