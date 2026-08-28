@@ -2,6 +2,7 @@ name: Build and Publish Repo
 on:
   push:
     branches: [ main, master ]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,15 +10,47 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Build extensions and generate repo
-        run: ./gradlew createRepo
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./repo
-          publish_branch: gh-pages
+
+      - name: Build Korean extensions
+        run: |
+          TASKS=()
+          for dir in src/ko/*/; do
+            module=$(basename "$dir")
+            TASKS+=(":src:ko:${module}:assembleRelease")
+          done
+          ./gradlew "${TASKS[@]}"
+
+      - name: Prepare repo branch worktree
+        run: |
+          git fetch origin repo || true
+          if git ls-remote --exit-code --heads origin repo > /dev/null; then
+            git worktree add repo-branch origin/repo
+          else
+            git worktree add --detach repo-branch
+            cd repo-branch
+            git checkout --orphan repo
+            git rm -rf . > /dev/null 2>&1 || true
+          fi
+
+      - name: Generate repo index
+        run: |
+          pip install protobuf
+          python .github/scripts/generate_self_repo.py repo-branch
+
+      - name: Commit and push repo branch
+        run: |
+          cd repo-branch
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish"
+          else
+            git commit -m "Update extension repo (${GITHUB_SHA::7})"
+            git push origin HEAD:repo
+          fi
