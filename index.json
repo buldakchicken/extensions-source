@@ -1,6 +1,10 @@
 {
   "name": "My Mihon Extensions",
   "badgeLabel": "SELF",
+  "signingKey": "self-hosted",
+  "contact": {
+    "website": "https://github.com/buldakchicken/extensions-source"
+  },
   "extensionList": {
     "extensions": [
       {
