@@ -1,0 +1,179 @@
+{
+  "name": "My Mihon Extensions",
+  "badgeLabel": "SELF",
+  "extensionList": {
+    "extensions": [
+      {
+        "name": "BlackToon",
+        "packageName": "eu.kanade.tachiyomi.extension.ko.blacktoon",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.blacktoon-v1.4.1.apk",
+          "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/blacktoon/res/mipmap-xhdpi/ic_launcher.png",
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.blacktoon-v1.4.1.jar"
+        },
+        "extensionLib": "1.4",
+        "versionCode": "1",
+        "versionName": "1.4.1",
+        "contentWarning": "CONTENT_WARNING_MIXED",
+        "sources": [
+          {
+            "id": "7080800841003944426",
+            "name": "\ube14\ub799\ud230",
+            "language": "ko",
+            "homeUrl": "https://blacktoon.me"
+          }
+        ]
+      },
+      {
+        "name": "Manatoki",
+        "packageName": "eu.kanade.tachiyomi.extension.ko.manatoki",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.manatoki-v1.4.2.apk",
+          "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/manatoki/res/mipmap-xhdpi/ic_launcher.png",
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.manatoki-v1.4.2.jar"
+        },
+        "extensionLib": "1.4",
+        "versionCode": "2",
+        "versionName": "1.4.2",
+        "contentWarning": "CONTENT_WARNING_NSFW",
+        "sources": [
+          {
+            "id": "3581741214949868596",
+            "name": "Manatoki",
+            "language": "ko",
+            "homeUrl": "https://mato30.com/"
+          }
+        ]
+      },
+      {
+        "name": "Naver Comic",
+        "packageName": "eu.kanade.tachiyomi.extension.ko.navercomic",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.navercomic-v1.4.9.apk",
+          "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/navercomic/res/mipmap-xhdpi/ic_launcher.png",
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.navercomic-v1.4.9.jar"
+        },
+        "extensionLib": "1.4",
+        "versionCode": "9",
+        "versionName": "1.4.9",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "sources": [
+          {
+            "id": "1311262507446028482",
+            "name": "Naver Webtoon",
+            "language": "ko",
+            "homeUrl": "https://comic.naver.com"
+          },
+          {
+            "id": "3983114856627782141",
+            "name": "Naver Webtoon Best Challenge",
+            "language": "ko",
+            "homeUrl": "https://comic.naver.com"
+          },
+          {
+            "id": "4487676425355815867",
+            "name": "Naver Webtoon Challenge",
+            "language": "ko",
+            "homeUrl": "https://comic.naver.com"
+          }
+        ]
+      },
+      {
+        "name": "RawDEX",
+        "packageName": "eu.kanade.tachiyomi.extension.ko.rawdex",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.rawdex-v1.6.56.apk",
+          "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/rawdex/res/mipmap-xhdpi/ic_launcher.png",
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.rawdex-v1.6.56.jar"
+        },
+        "extensionLib": "1.6",
+        "versionCode": "56",
+        "versionName": "1.6.56",
+        "contentWarning": "CONTENT_WARNING_NSFW",
+        "sources": [
+          {
+            "id": "7981220701421282731",
+            "name": "RawDEX",
+            "language": "ko",
+            "homeUrl": "https://rawdex.net"
+          }
+        ]
+      },
+      {
+        "name": "11toon",
+        "packageName": "eu.kanade.tachiyomi.extension.ko.toon11",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.toon11-v1.4.2.apk",
+          "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/toon11/res/mipmap-xhdpi/ic_launcher.png",
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.toon11-v1.4.2.jar"
+        },
+        "extensionLib": "1.4",
+        "versionCode": "2",
+        "versionName": "1.4.2",
+        "contentWarning": "CONTENT_WARNING_MIXED",
+        "sources": [
+          {
+            "id": "8796296375202334266",
+            "name": "11toon",
+            "language": "ko",
+            "homeUrl": "https://www.11toon.com"
+          }
+        ]
+      },
+      {
+        "name": "Toonkor",
+        "packageName": "eu.kanade.tachiyomi.extension.ko.toonkor",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.toonkor-v1.4.7.apk",
+          "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/toonkor/res/mipmap-xhdpi/ic_launcher.png",
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.toonkor-v1.4.7.jar"
+        },
+        "extensionLib": "1.4",
+        "versionCode": "7",
+        "versionName": "1.4.7",
+        "contentWarning": "CONTENT_WARNING_MIXED",
+        "sources": [
+          {
+            "id": "6596496791271983268",
+            "name": "Toonkor",
+            "language": "ko",
+            "homeUrl": "https://tkor131.com"
+          }
+        ]
+      },
+      {
+        "name": "Wolf.com",
+        "packageName": "eu.kanade.tachiyomi.extension.ko.wolfdotcom",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.wolfdotcom-v1.4.4.apk",
+          "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/wolfdotcom/res/mipmap-xhdpi/ic_launcher.png",
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.wolfdotcom-v1.4.4.jar"
+        },
+        "extensionLib": "1.4",
+        "versionCode": "4",
+        "versionName": "1.4.4",
+        "contentWarning": "CONTENT_WARNING_MIXED",
+        "sources": [
+          {
+            "id": "5583626852311652499",
+            "name": "\ub291\ub300\ub2f7\ucef4 - \uc6f9\ud230",
+            "language": "ko",
+            "homeUrl": "https://wfwf414.com"
+          },
+          {
+            "id": "7074060458114951398",
+            "name": "\ub291\ub300\ub2f7\ucef4 - \ub9cc\ud654\ucc45",
+            "language": "ko",
+            "homeUrl": "https://wfwf414.com"
+          },
+          {
+            "id": "4225505094399546613",
+            "name": "\ub291\ub300\ub2f7\ucef4 - \ud3ec\ud1a0\ud230",
+            "language": "ko",
+            "homeUrl": "https://wfwf414.com"
+          }
+        ]
+      }
+    ]
+  }
+}
