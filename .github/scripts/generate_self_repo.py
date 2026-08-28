@@ -95,6 +95,12 @@ extensions.sort(key=lambda ext: ext.packageName)
 index = index_pb2.Index(
     name="My Mihon Extensions",
     badgeLabel="SELF",
+    # Mihon's NetworkExtensionStore model requires signingKey/contact to be
+    # present on the wire, but proto3 omits default-value (empty) fields —
+    # so both must be set to something non-default or the app rejects the
+    # store with "Fields [signingKey, contact] are required".
+    signingKey="self-hosted",
+    contact=index_pb2.Contact(website=f"https://github.com/{GITHUB_REPOSITORY}"),
     extensionList=index_pb2.ExtensionList(extensions=extensions),
 )
 
