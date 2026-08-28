@@ -11,6 +11,7 @@ import eu.kanade.tachiyomi.util.asJsoup
 import keiyoushi.annotation.Source
 import keiyoushi.network.rateLimit
 import keiyoushi.utils.tryParse
+import okhttp3.HttpUrl.Companion.toHttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
@@ -68,8 +69,16 @@ abstract class Manatoki : HttpSource() {
     // ============================== Search ===============================
 
     override fun searchMangaRequest(page: Int, query: String, filters: FilterList): Request {
-        val encodedQuery = java.net.URLEncoder.encode(query, "UTF-8")
-        return GET("$baseUrl/bbs/board.php?bo_table=cartoon&stx=$encodedQuery&page=$page", headers)
+        // Site search runs against the "carfa" board (not "cartoon", used for browsing/latest),
+        // and requires sfl/sop alongside stx or it silently returns no results.
+        val url = "$baseUrl/bbs/board.php".toHttpUrl().newBuilder()
+            .addQueryParameter("bo_table", "carfa")
+            .addQueryParameter("sfl", "wr_subject")
+            .addQueryParameter("sop", "and")
+            .addQueryParameter("stx", query)
+            .addQueryParameter("page", page.toString())
+            .build()
+        return GET(url, headers)
     }
 
     override fun searchMangaParse(response: Response): MangasPage = latestUpdatesParse(response)
