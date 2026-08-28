@@ -121,13 +121,16 @@ abstract class Manatoki : HttpSource() {
                 val a = element.selectFirst(".item-subject")
                     ?: throw Exception("Chapter URL not found")
                 setUrlWithoutDomain(a.attr("abs:href"))
-                val num = element.selectFirst(".wr-num")?.text()?.toIntOrNull()
-                name = if (num != null) {
-                    "Chapter $num"
-                } else {
-                    "Chapter ${total - index}"
-                }
-                chapter_number = num?.toFloat() ?: (total - index).toFloat()
+                val title = a.text().ifEmpty { "Chapter ${total - index}" }
+                name = title
+                // .wr-num is just the post's sequential board id, not the episode number, so
+                // extras/specials (e.g. "15.3화") sort out of order against it. Parse the real
+                // chapter number from the title instead, preferring the digits right before "화".
+                chapter_number = (CHAPTER_NUMBER_WITH_SUFFIX_REGEX.find(title) ?: CHAPTER_NUMBER_REGEX.find(title))
+                    ?.groupValues
+                    ?.get(1)
+                    ?.toFloatOrNull()
+                    ?: (total - index).toFloat()
                 val dateStr = element.selectFirst(".wr-date")?.text()
                 date_upload = dateFormat.tryParse(dateStr)
             }
@@ -160,3 +163,6 @@ abstract class Manatoki : HttpSource() {
 
     override fun imageUrlParse(response: Response): String = throw UnsupportedOperationException()
 }
+
+private val CHAPTER_NUMBER_WITH_SUFFIX_REGEX = Regex("""(\d+(?:\.\d+)?)\s*화""")
+private val CHAPTER_NUMBER_REGEX = Regex("""(\d+(?:\.\d+)?)""")
