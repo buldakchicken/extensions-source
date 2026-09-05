@@ -32,13 +32,13 @@
         "name": "Manatoki",
         "packageName": "eu.kanade.tachiyomi.extension.ko.manatoki",
         "resources": {
-          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.manatoki-v1.4.4.apk",
+          "apkUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.manatoki-v1.4.5.apk",
           "iconUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/main/src/ko/manatoki/res/mipmap-xhdpi/ic_launcher.png",
-          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.manatoki-v1.4.4.jar"
+          "jarUrl": "https://raw.githubusercontent.com/buldakchicken/extensions-source/repo/apk/tachiyomi-ko.manatoki-v1.4.5.jar"
         },
         "extensionLib": "1.4",
-        "versionCode": "4",
-        "versionName": "1.4.4",
+        "versionCode": "5",
+        "versionName": "1.4.5",
         "contentWarning": "CONTENT_WARNING_NSFW",
         "sources": [
           {
